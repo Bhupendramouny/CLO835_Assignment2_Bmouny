@@ -26,7 +26,7 @@ jobs:
       - name: Build and push webapp image
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: assignment1-webapp  # Updated ECR repository name from main.tf
+          ECR_REPOSITORY: assignment2-webapp  # Updated ECR repository name from main.tf
         run: |
           # Build the web app image
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:latest .
@@ -36,7 +36,7 @@ jobs:
       - name: Build and push MySQL image
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: assignment1-mysql  # Updated ECR repository name from main.tf
+          ECR_REPOSITORY: assignment2-mysql  # Updated ECR repository name from main.tf
         run: |
           # Build the MySQL image
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:latest -f Dockerfile_mysql .
